@@ -1,4 +1,4 @@
-package com.test.order;
+package com.test.model;
 
 import com.google.gson.Gson;
 
