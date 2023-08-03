@@ -3,7 +3,7 @@ package com.test.model;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class OderBook {
+public class OrderBook {
 
     public static final Map<String, Order> orderBook = new TreeMap<>();
 
