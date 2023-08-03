@@ -14,4 +14,15 @@ public class OrderService {
 
         return ResponseEntity.ok().body(order);
     }
+
+    public ResponseEntity getOrderById(String orderId) {
+
+        Order order = OrderBook.orderBook.get(orderId);
+
+        if (order == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok().body(order);
+
+    }
 }
