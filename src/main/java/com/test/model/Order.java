@@ -8,9 +8,9 @@ public class Order {
 
     private String id;
     private String name;
-    private String price;
+    private Long price;
 
-    public Order(String id, String name, String price) {
+    public Order(String id, String name, Long price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -34,11 +34,11 @@ public class Order {
         return this;
     }
 
-    public String getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public Order setPrice(String price) {
+    public Order setPrice(Long price) {
         this.price = price;
         return this;
     }
