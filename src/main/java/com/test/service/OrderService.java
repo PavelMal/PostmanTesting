@@ -20,7 +20,7 @@ public class OrderService {
         Order order = OrderBook.orderBook.get(orderId);
 
         if (order == null) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok().body(order);
 
