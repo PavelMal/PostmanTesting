@@ -9,14 +9,15 @@ public class OrderBook {
     public static final TreeMap<Long, Order> orderBook = new TreeMap<>();
 
     public static void addOrder(Order order) {
-        Long lastId = 1L;
-        try {
-            lastId = orderBook.lastKey();
-        } catch (NoSuchElementException ex) {
-            orderBook.put(lastId, order);
+
+        if (orderBook.isEmpty()) {
+            order.setId(1L);
+            orderBook.put(1L, order);
         }
-
-        orderBook.put(lastId + 1, order);
-
+        else {
+            Long lastId = orderBook.lastKey();
+            order.setId(lastId + 1);
+            orderBook.put(order.getId(), order);
+        }
     }
 }

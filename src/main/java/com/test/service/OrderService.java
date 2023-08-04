@@ -12,7 +12,7 @@ public class OrderService {
 
         OrderBook.addOrder(order);
 
-        return ResponseEntity.ok().body(order.getId());
+        return ResponseEntity.ok().body(order.getId().toString());
     }
 
     public ResponseEntity getOrderById(Long orderId) {
