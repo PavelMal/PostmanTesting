@@ -6,21 +6,20 @@ import java.util.Objects;
 
 public class Order {
 
-    private String id;
+    private Long id;
     private String name;
     private Long price;
 
-    public Order(String id, String name, Long price) {
-        this.id = id;
+    public Order(String name, Long price) {
         this.name = name;
         this.price = price;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public Order setId(String id) {
+    public Order setId(Long id) {
         this.id = id;
         return this;
     }

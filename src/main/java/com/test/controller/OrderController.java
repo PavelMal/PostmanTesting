@@ -19,7 +19,7 @@ public class OrderController {
     }
 
     @GetMapping
-    public ResponseEntity getOrderById(@RequestParam(name = "id") String orderId) {
+    public ResponseEntity getOrderById(@RequestParam(name = "id") Long orderId) {
         return orderService.getOrderById(orderId);
     }
 }
