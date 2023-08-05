@@ -1,5 +1,6 @@
 package com.test.service;
 
+import com.google.gson.Gson;
 import com.test.model.Order;
 import com.test.model.OrderBook;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,8 @@ public class OrderService {
 
         OrderBook.addOrder(order);
 
-        return ResponseEntity.ok().body(order.getId().toString());
+//        return ResponseEntity.ok().body("{ \n \"id\": " + order.getId() + " \n }");
+        return ResponseEntity.ok().body(new Gson().toJson(order.getId()));
     }
 
     public ResponseEntity getOrderById(Long orderId) {
