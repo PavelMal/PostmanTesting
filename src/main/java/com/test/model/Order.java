@@ -37,11 +37,6 @@ public class Order {
         return price;
     }
 
-    public Order setPrice(Long price) {
-        this.price = price;
-        return this;
-    }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price);
