@@ -24,10 +24,6 @@ public class Order {
         return this;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public Order setName(String name) {
         this.name = name;
         return this;
