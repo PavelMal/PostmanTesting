@@ -1,13 +1,16 @@
 package com.test.model;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.Expose;
 
 import java.util.Objects;
 
 public class Order {
 
     private Long id;
+    @Expose
     private String name;
+    @Expose
     private Long price;
 
     public Order(String name, Long price) {
@@ -22,6 +25,14 @@ public class Order {
     public Order setId(Long id) {
         this.id = id;
         return this;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Order setName(String name) {
