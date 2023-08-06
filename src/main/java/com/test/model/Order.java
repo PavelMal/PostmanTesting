@@ -33,10 +33,6 @@ public class Order {
         return this;
     }
 
-    public Long getPrice() {
-        return price;
-    }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price);
