@@ -8,12 +8,17 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler extends RuntimeException {
 
     @ExceptionHandler(value = NullPriceException.class)
-    public ResponseEntity handleNullPriceException(){
-        return ResponseEntity.badRequest().body(new ExceptionMessage("You need to pass 'price' param"));
+    public ResponseEntity<ExceptionMessage> handleNullPriceException(){
+        return ResponseEntity.badRequest().body(new ExceptionMessage("You need to pass a 'price' param"));
     }
 
     @ExceptionHandler(PriceLessOrEqualZeroException.class)
-    public ResponseEntity handlePriceLessOrEqualZeroException(PriceLessOrEqualZeroException ex){
+    public ResponseEntity<ExceptionMessage> handlePriceLessOrEqualZeroException(){
         return ResponseEntity.badRequest().body(new ExceptionMessage("Price can't be less or equal than 0"));
+    }
+
+    @ExceptionHandler(NullNameException.class)
+    public ResponseEntity<ExceptionMessage> handleNullNameException(){
+        return ResponseEntity.badRequest().body(new ExceptionMessage("You need to pass a 'name' param"));
     }
 }
