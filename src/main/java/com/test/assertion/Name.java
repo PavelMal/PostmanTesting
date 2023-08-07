@@ -1,8 +1,7 @@
 package com.test.assertion;
 
+import com.test.exception.EmptyNameException;
 import com.test.exception.NullNameException;
-import com.test.exception.NullPriceException;
-import com.test.exception.PriceLessOrEqualZeroException;
 import com.test.model.Order;
 
 public class Name {
@@ -11,6 +10,10 @@ public class Name {
 
         if (order.getName() == null) {
             throw new NullNameException();
+        }
+
+        if (order.getName().isEmpty()) {
+            throw new EmptyNameException();
         }
     }
 }

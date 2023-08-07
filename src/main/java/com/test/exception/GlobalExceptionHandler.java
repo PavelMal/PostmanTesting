@@ -21,4 +21,9 @@ public class GlobalExceptionHandler extends RuntimeException {
     public ResponseEntity<ExceptionMessage> handleNullNameException(){
         return ResponseEntity.badRequest().body(new ExceptionMessage("You need to pass a 'name' param"));
     }
+
+    @ExceptionHandler(EmptyNameException.class)
+    public ResponseEntity<ExceptionMessage> handleEmptyNameException(){
+        return ResponseEntity.badRequest().body(new ExceptionMessage("Param 'name' shouldn't be empty"));
+    }
 }
