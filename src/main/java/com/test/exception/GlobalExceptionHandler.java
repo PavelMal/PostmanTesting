@@ -26,4 +26,9 @@ public class GlobalExceptionHandler extends RuntimeException {
     public ResponseEntity<ExceptionMessage> handleEmptyNameException(){
         return ResponseEntity.badRequest().body(new ExceptionMessage("Param 'name' shouldn't be empty"));
     }
+
+    @ExceptionHandler(NotAllowedToAddIdException.class)
+    public ResponseEntity<ExceptionMessage> notAllowedToAddIdException(){
+        return ResponseEntity.badRequest().body(new ExceptionMessage("You don't need to pass an 'id' param"));
+    }
 }
