@@ -10,6 +10,15 @@ public class ExceptionMessage {
         this.message = message;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public ExceptionMessage setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
     @Override
     public String toString() {
         return new Gson().toJson(this);
