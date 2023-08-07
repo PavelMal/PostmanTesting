@@ -27,7 +27,7 @@ public class OrderService {
         return ResponseEntity.ok().body(order.getId());
     }
 
-    public ResponseEntity getOrderById(Long orderId) {
+    public ResponseEntity<Order> getOrderById(Long orderId) {
 
         Order order = OrderBook.orderBook.get(orderId);
 
