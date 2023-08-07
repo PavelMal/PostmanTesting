@@ -9,6 +9,9 @@ import com.test.model.OrderBook;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.TreeMap;
+
 import static com.test.assertion.Id.checkId;
 import static com.test.assertion.Name.checkName;
 import static com.test.assertion.Price.checkPrice;
@@ -24,7 +27,10 @@ public class OrderService {
 
         OrderBook.addOrder(order);
 
-        return ResponseEntity.ok().body(order.getId());
+        HashMap<String, Long> map = new HashMap<>();
+        map.put("id", order.getId());
+
+        return ResponseEntity.ok().body(map);
     }
 
     public ResponseEntity<Order> getOrderById(Long orderId) {
