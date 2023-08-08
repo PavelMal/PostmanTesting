@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  qa-server:
+    container_name: qa-server
+    image: "qa-server"
+    build: .
+    ports:
+      - 8080:8080
