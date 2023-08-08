@@ -1,8 +1,6 @@
 package com.test.model;
 
 import com.google.gson.Gson;
-import com.google.gson.annotations.Expose;
-import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.Objects;
 
