@@ -12,6 +12,6 @@ public class HealthcheckController {
 
     @GetMapping("/check")
     public ResponseEntity getHealthcheck() {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("OK");
     }
 }
