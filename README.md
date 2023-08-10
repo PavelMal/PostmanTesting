@@ -23,6 +23,6 @@ an example of POST `/api/order/create` method:
 an example of response:
 ***
     {
-    "id": 1
+        "id": 1
     }
 ***
