@@ -18,4 +18,8 @@ public class OrderBook {
             orderBook.put(order.getId(), order);
         }
     }
+
+    public static void cleanOrderBook() {
+        orderBook.clear();
+    }
 }

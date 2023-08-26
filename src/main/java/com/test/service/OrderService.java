@@ -1,16 +1,11 @@
 package com.test.service;
 
-import com.google.gson.Gson;
-import com.test.assertion.Id;
-import com.test.assertion.Name;
-import com.test.assertion.Price;
 import com.test.model.Order;
 import com.test.model.OrderBook;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.TreeMap;
 
 import static com.test.assertion.Id.checkId;
 import static com.test.assertion.Name.checkName;
@@ -41,6 +36,14 @@ public class OrderService {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok().body(order);
+
+    }
+
+    public ResponseEntity cleanOrderBook() {
+
+        OrderBook.cleanOrderBook();
+
+        return ResponseEntity.ok().build();
 
     }
 }

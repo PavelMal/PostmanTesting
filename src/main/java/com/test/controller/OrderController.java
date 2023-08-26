@@ -24,4 +24,9 @@ public class OrderController {
     public ResponseEntity getOrderById(@RequestParam(name = "id") Long orderId) {
         return orderService.getOrderById(orderId);
     }
+
+    @PostMapping("/clear")
+    public ResponseEntity cleanOrderBook() {
+        return orderService.cleanOrderBook();
+    }
 }
