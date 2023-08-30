@@ -12,7 +12,7 @@ public class Name {
             throw new NullNameException();
         }
 
-        if (order.getName().isEmpty()) {
+        if (order.getName().isBlank()) {
             throw new EmptyNameException();
         }
     }
